@@ -1,0 +1,26 @@
+# Игнорируем зависимости
+node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Игнорируем кэш ESLint и другие временные файлы
+.eslintcache
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Игнорируем сборочные файлы
+dist/
+build/
+out/
+coverage/
+
+# Игнорируем env-файлы с секретами
+.env
+.env.local
+.env.*.local
