@@ -12,8 +12,8 @@ const personalPlanPeter = {
         exp: '1 month'
     },
     showAgeAndLangs: function (plan) {
-        let message = `Мне ${plan["age"]} и я владею языками:${plan["skills"]["languages"].join(' ').toUpperCase()}`
-        return message
+        let message = `Мне ${plan["age"]} и я владею языками: ${plan["skills"]["languages"].join(' ').toUpperCase()}`;
+        return message;
     }
 };
 
