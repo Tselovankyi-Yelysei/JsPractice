@@ -27,14 +27,18 @@ function availableCurr(arr, missingCurr) {
     // arr.forEach(item => str += `${item}\n`);
 
     // return str;
+
+
+
+    // let str = '';
+    // if (arr.length === 0) {
+    //     str = 'Нет доступных валют'
+    // }
+    // else {
+    //     str = 'Доступные валюты:\n'
+    // }
     let str = '';
-    if (arr.length === 0) {
-        str = 'Нет доступных валют'
-    }
-    else {
-        str = 'Доступные валюты:\n'
-    }
-    // str = arr.length === 0 ? str = 'Нет доступных валют' : str = 'Доступные валюты:\n';
+    arr.length === 0 ? str = 'Нет доступных валют' : str = 'Доступные валюты:\n';
     arr.forEach(element => {
         if (element != missingCurr) {
             str += `${element}\n`;
