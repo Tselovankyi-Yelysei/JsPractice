@@ -47,7 +47,6 @@ let personalMovieDB = {
     },
 
     detectPersonalLevel: function () {
-        console.log(personalMovieDB);
         if (personalMovieDB.count < 10) {
             console.log("Просмотрено довольно мало фильмов");
         }
@@ -72,15 +71,18 @@ let personalMovieDB = {
         if (!isPrivat) {
             console.log(personalMovieDB);
         }
+        else {
+            console.log("Приватная информация!");
+        }
     },
 
-
+    toggleVisibleMyDB: function () {
+        personalMovieDB.privat = !personalMovieDB.privat;
+    }
 
 };
 
-
-
-
+personalMovieDB.toggleVisibleMyDB();
 
 personalMovieDB.rememberMyFilms();
 
