@@ -14,27 +14,23 @@
 
 'use strict';
 
-let numberOfFilms;
-
-function start() {
-    numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели и хотите занести их в базу?', '');
-    while (numberOfFilms <= 0 || !numberOfFilms || isNaN(numberOfFilms)) {
-        numberOfFilms = +prompt('Всё таки ответьте, сколько фильмов вы уже посмотрели и хотите занести их в базу?', '');
-    }
-
-}
-
-start();
 
 let personalMovieDB = {
-    count: numberOfFilms,
+    count: 0,
     movies: {},
     actors: {},
     genres: [],
     privat: false,
 
+    start: function () {
+        personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели и хотите занести их в базу?', '');
+        while (personalMovieDB.count <= 0 || !personalMovieDB.count || isNaN(personalMovieDB.count)) {
+            personalMovieDB.count = +prompt('Всё таки ответьте, сколько фильмов вы уже посмотрели и хотите занести их в базу?', '');
+        }
+
+    },
     rememberMyFilms: function () {
-        for (let i = 0; i < numberOfFilms; i++) {
+        for (let i = 0; i < personalMovieDB.count; i++) {
             let recentFilmName = prompt('Один из последних просмотренных фильмов?', '');
             let recentFilmScore = prompt('На сколько оцените его?', '');
             if (!recentFilmName || !recentFilmScore || recentFilmName.length > 50) {
@@ -75,8 +71,8 @@ let personalMovieDB = {
         });
     },
 
-    showMyDB: function (isPrivat) {
-        if (!isPrivat) {
+    showMyDB: function () {
+        if (personalMovieDB.privat) {
             console.log(personalMovieDB);
         }
         else {
@@ -91,6 +87,7 @@ let personalMovieDB = {
 };
 
 // personalMovieDB.toggleVisibleMyDB();
+personalMovieDB.start();
 
 personalMovieDB.rememberMyFilms();
 
