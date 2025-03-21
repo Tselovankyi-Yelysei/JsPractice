@@ -63,8 +63,16 @@ let personalMovieDB = {
 
     writeYourGenres: function () {
         for (let i = 1; i <= 3; i++) {
-            personalMovieDB.genres.push(prompt(`Ваш любимый жанр под номером ${i}`));
+            let actualGenre = prompt(`Ваш любимый жанр под номером ${i}`);
+            if (!actualGenre) {
+                i--;
+                continue;
+            }
+            personalMovieDB.genres.push(actualGenre);
         }
+        personalMovieDB.genres.forEach((genre, index) => {
+            console.log(`Любимый жанр ${index + 1} - это ${genre}`);
+        });
     },
 
     showMyDB: function (isPrivat) {
@@ -82,7 +90,7 @@ let personalMovieDB = {
 
 };
 
-personalMovieDB.toggleVisibleMyDB();
+// personalMovieDB.toggleVisibleMyDB();
 
 personalMovieDB.rememberMyFilms();
 
