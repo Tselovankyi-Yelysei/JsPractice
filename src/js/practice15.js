@@ -45,19 +45,20 @@ function isAverageLunchPriceTrue(fDish, sDish, average) {
     }
 }
 
-if (typeof structuredClone === "function") {
-    console.log("structuredClone поддерживается!");
-} else {
-    console.log("structuredClone не поддерживается.");
-}
 
 console.log(isAverageLunchPriceTrue(restorantData.menu[0], restorantData.menu[1], restorantData.averageLunchPrice));
 
 function transferWaitors(data) {
-    // const copy = Object.assign({}, data);
-    const copy = structuredClone(data);
+    const copy = Object.assign({}, data);
+    //1
+    // const copy = structuredClone(data);
 
-    copy.waitors[0] = { name: 'Mike', age: 32 };
+    //2 
+    // copy.waitors = Object.assign({}, data.waitors);
+    // copy.waitors[0] = { name: 'Mike', age: 32 };
+
+    //3
+    copy.waitors = { name: 'Mike', age: 32 };
     return copy;
 }
 
