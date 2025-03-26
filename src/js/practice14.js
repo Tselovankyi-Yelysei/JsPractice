@@ -3,23 +3,21 @@ const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'B
 function sortStudentsByGroups(arr) {
     arr.sort();
     let a = [], b = [], c = [], rest = [];
-    console.log(rest.length);
 
     for (let i = 0; i < arr.length; i++) {
         if (i < 3) {
-            a.push(students[i]);
+            a.push(arr[i]);
         }
         else if (i < 6) {
-            b.push(students[i]);
+            b.push(arr[i]);
         }
         else if (i < 9) {
-            c.push(students[i]);
+            c.push(arr[i]);
         }
         else {
-            rest.push(students[i]);
+            rest.push(arr[i]);
         }
     }
-    console.log(rest.length);
     return [a, b, c, `Оставшиеся студенты: ${rest.length === 0 ? '-' : rest.join(', ')}`];
 }
 
