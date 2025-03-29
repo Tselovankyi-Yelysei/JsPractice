@@ -1,7 +1,13 @@
 'use strict';
 
 function factorial(number) {
-    if (number === 1) {
+    if (typeof (number) != "number" || !Number.isInteger(number)) {
+        return "Вы ввели недопустимое значение"
+    }
+    else if (number <= 0) {
+        return 1;
+    }
+    else if (number === 1) {
         return number;
     }
     else {
@@ -9,10 +15,11 @@ function factorial(number) {
     }
 }
 
-console.log(factorial(5));
+console.log(factorial(4));
 
 
 function factorialIterator(number) {
+
     let finalResult = number;
     for (let i = 1; i < number; i++) {
         finalResult *= number - i;
