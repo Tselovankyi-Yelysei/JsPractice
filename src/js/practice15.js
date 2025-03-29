@@ -58,7 +58,7 @@ function transferWaitors(data) {
     // copy.waitors[0] = { name: 'Mike', age: 32 };
 
     //3
-    copy.waitors = { name: 'Mike', age: 32 };
+    copy.waitors = [{ name: 'Mike', age: 32 }];
     return copy;
 }
 
